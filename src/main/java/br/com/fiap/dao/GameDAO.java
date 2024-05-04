@@ -18,4 +18,13 @@ public class GameDAO {
             em.merge(games);
         }
 
+        public void remover(Games games){
+            Games gameExcluir = em.find(Games.class, games.getId());
+            em.remove(gameExcluir);
+        }
+
+        public Games buscarGamePeloId(Games games){
+            return em.find(Games.class, games.getId());
+        }
+
 }
