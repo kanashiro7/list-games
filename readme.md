@@ -2,7 +2,7 @@ LISTA DE JOGOS
 -
 
 O projeto se baseia na persistência de dados, criando um banco de dados para uma lista de jogos.
-Utilizando a arquitetura DAO e consultando o banco de dados usando a chamada JPSQL.
+Utilizando a arquitetura DAO e consultando o banco de dados usando a chamada JPQL.
 
 O QUE FOI UTILIZADO?
 - JPA
