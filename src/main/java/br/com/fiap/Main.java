@@ -9,13 +9,63 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
 
         EntityManager em = Conexao.getEntityManager();
-        pesquisar(em);
+        //cadastrar(em);
+        //pesquisar(em);
+       //listarTodosOsGames(em);
+        //buscarPeloNome(em);
+        //buscarGamesPelosValores(em);
+        buscarJogosProddutora(em);
         em.close();
+    }
+
+    //Listando todos os valores que estão inseridos no banco de dados utilizando JPQL
+    public static void buscarJogosProddutora(EntityManager em){
+        GameDAO gameDAO = new GameDAO(em);
+        List<Games> games = gameDAO.buscarJogosProdutora("KONAMI".toUpperCase());
+
+        for (Games game : games){
+            System.out.println(game);
+            System.out.println("_________________________");
+        }
+    }
+
+    //Listando todos os valores que estão inseridos no banco de dados utilizando JPQL
+    public static void buscarGamesPelosValores(EntityManager em){
+        GameDAO gameDAO = new GameDAO(em);
+        List<Games> games = gameDAO.buscarJogoPorFaixaDeValores(150.0, 300.0);
+
+        for (Games game : games){
+            System.out.println(game);
+            System.out.println("_________________________");
+        }
+    }
+
+    public static void buscarPeloNome(EntityManager em){
+        GameDAO gameDAO = new GameDAO(em);
+        List<Games> games = gameDAO.buscarPeloNome("GTA V".toUpperCase());
+
+        for (Games game : games){
+            System.out.println(game);
+            System.out.println("_________________________");
+        }
+    }
+
+    //Listando todos os valores que estão inseridos no banco de dados utilizando JPQL
+    public static void listarTodosOsGames(EntityManager em){
+        GameDAO gameDAO = new GameDAO(em);
+        List<Games> games = gameDAO.listarTodosOsJogos();
+
+        for (Games game : games){
+            System.out.println(game);
+            System.out.print("_________________________");
+        }
     }
 
     public static void pesquisar(EntityManager em){
