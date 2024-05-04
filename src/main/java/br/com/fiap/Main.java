@@ -18,10 +18,10 @@ public class Main {
         EntityManager em = Conexao.getEntityManager();
         //cadastrar(em);
         //pesquisar(em);
-       //listarTodosOsGames(em);
+       listarTodosOsGames(em);
         //buscarPeloNome(em);
         //buscarGamesPelosValores(em);
-        buscarJogosProddutora(em);
+        //buscarJogosProddutora(em);
         em.close();
     }
 

@@ -79,7 +79,7 @@ public class Games {
     public String toString(){
         return "ID:" + this.id + ""
                 + "\nTITULO: " + this.titulo + ""
-                + "\nLANCÇAMENTO: " + this.dataLancamento + ""
+                + "\nLANÇAMENTO: " + this.dataLancamento + ""
                 + "\nVALOR: " + this.Valor + ""
                 + "\nPRODUTORA: " + this.produtora + ""
                 + "\nFINALIZADO: " + this.finalizado + ""
